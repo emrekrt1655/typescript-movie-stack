@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MovieStore } from './store/MovieStore';
+import { StoreProvider } from './context/StoreContext';
+
+
+const movieData = new MovieStore([])
 
 ReactDOM.render(
   <React.StrictMode>
+    <StoreProvider value={movieData}>
     <App />
+  </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
